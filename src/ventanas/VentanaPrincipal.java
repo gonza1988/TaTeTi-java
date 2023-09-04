@@ -366,6 +366,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void comprobarGanador() {
         boolean ganador1 = false;
         boolean ganador2 = false;
+        int casillasEmpate = 0;
         
         //comprobamos si el ganador es el jugador 1
         ganador1 = comprobar(1);
@@ -379,6 +380,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         else if(ganador2 == true) {
             System.out.println("El ganador es el usuario 2");
             reiniciarJuego();
+        }
+         //tal vez el tablero esté lleno, y eso sería un empate
+        else {
+             for (int i = 0; i < 3; i++) {
+                 for (int j = 0; j < 3; j++) {
+                     if(matriz[i][j] != 0) { //puede haber un 1 o un 2
+                         casillasEmpate++;
+                     }
+                 }
+             }
+             
+             if(casillasEmpate == 9) {
+                 System.out.println("Empate");
+                 reiniciarJuego();
+             }
+             else {
+                 casillasEmpate = 0;
+             }
         }
     }
     
