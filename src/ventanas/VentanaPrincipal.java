@@ -351,19 +351,57 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     
     private void comprobarGanador() {
+        boolean ganador1 = false;
+        boolean ganador2 = false;
         
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                System.out.print(matriz[i][j]+" ");
-            }
-            System.out.println("");
+        //comprobamos si el ganador es el jugador 1
+        ganador1 = comprobar(1);
+        //comprobamos si el ganador es el jugador 2
+        ganador2 = comprobar(2);
+        
+        if(ganador1 == true) {
+            System.out.println("El ganador es el usuario 1");
         }
-        System.out.println("");
+        else if(ganador2 == true) {
+            System.out.println("El ganador es el usuario 2");
+        }
     }
     
-    /**
-     * @param args the command line arguments
-     */
+     private boolean comprobar(int num) {
+         boolean ganador = false;
+         
+         //filas
+         if(matriz[0][0] == num && matriz[0][1] == num && matriz[0][2] == num) {
+             ganador = true;
+         }
+         else if(matriz[1][0] == num && matriz[1][1] == num && matriz[1][2] == num) {
+             ganador = true;
+         }
+         else if(matriz[2][0] == num && matriz[2][1] == num && matriz[2][2] == num) {
+             ganador = true;
+         }
+         //columnas
+         else if(matriz[0][0] == num && matriz[1][0] == num && matriz[2][0] == num) {
+             ganador = true;
+         }
+         else if(matriz[0][1] == num && matriz[1][1] == num && matriz[2][1] == num) {
+             ganador = true;
+         }
+         else if(matriz[0][2] == num && matriz[1][2] == num && matriz[2][2] == num) {
+             ganador = true;
+         }
+         //diagonales
+         else if(matriz[0][0] == num && matriz[1][1] == num && matriz[2][2] == num) {
+             ganador = true;
+         }
+         else if(matriz[0][2] == num && matriz[1][1] == num && matriz[2][0] == num) {
+             ganador = true;
+         }
+         
+         return ganador;
+     }
+    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
