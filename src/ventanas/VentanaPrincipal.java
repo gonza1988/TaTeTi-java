@@ -40,6 +40,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }
     
+    private void reiniciarTablero() {
+        
+        botonArribaIzquierda.setIcon(null);
+        botonArribaCentro.setIcon(null);
+        botonArribaDerecha.setIcon(null);
+        botonCentroIzquierda.setIcon(null);
+        botonCentroCentro.setIcon(null);
+        botonCentroDerecha.setIcon(null);
+        botonAbajoIzquierda.setIcon(null);
+        botonAbajoCentro.setIcon(null);
+        botonAbajoDerecha.setIcon(null);
+    }
+    
     private void dibujarX(JButton boton) {
         boton.setIcon(new ImageIcon(getClass().getResource("/imagenes/cancelar.png")));
     }
@@ -361,9 +374,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         if(ganador1 == true) {
             System.out.println("El ganador es el usuario 1");
+            reiniciarJuego();
         }
         else if(ganador2 == true) {
             System.out.println("El ganador es el usuario 2");
+            reiniciarJuego();
         }
     }
     
@@ -401,6 +416,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
          return ganador;
      }
     
+     private void reiniciarJuego() {
+         llenarCasillas();
+         llenarMatriz();
+         reiniciarTablero();
+         
+     }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
