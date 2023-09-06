@@ -10,15 +10,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private boolean casilla[][] = new boolean [3][3];
     private int matriz[][] = new int[3][3];
     private String turno = "usuario1";
+    private String usuario1, usuario2;
     
     
-    public VentanaPrincipal() {
+    public VentanaPrincipal(String usuario1, String usuario2) {
         initComponents();
         setSize(600,600);
         setLocationRelativeTo(null);
         
         llenarCasillas();
         llenarMatriz();
+        
+        this.usuario1 = usuario1;
+        this.usuario2 = usuario2;
     }
     
     
@@ -374,11 +378,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ganador2 = comprobar(2);
         
         if(ganador1 == true) {
-            System.out.println("El ganador es el usuario 1");
+            System.out.println("El ganador es el usuario 1: " + usuario1);
             reiniciarJuego();
         }
         else if(ganador2 == true) {
-            System.out.println("El ganador es el usuario 2");
+            System.out.println("El ganador es el usuario 2: " + usuario2);
             reiniciarJuego();
         }
          //tal vez el tablero esté lleno, y eso sería un empate
@@ -469,7 +473,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPrincipal().setVisible(true);
+                new VentanaPrincipal(null, null).setVisible(true);
             }
         });
     }
