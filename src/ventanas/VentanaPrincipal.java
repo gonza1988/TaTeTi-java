@@ -14,15 +14,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     
     
     public VentanaPrincipal(String usuario1, String usuario2) {
+        this.usuario1 = usuario1;
+        this.usuario2 = usuario2;
+        
         initComponents();
         setSize(600,600);
         setLocationRelativeTo(null);
         
         llenarCasillas();
         llenarMatriz();
-        
-        this.usuario1 = usuario1;
-        this.usuario2 = usuario2;
     }
     
     
@@ -378,11 +378,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ganador2 = comprobar(2);
         
         if(ganador1 == true) {
-            System.out.println("El ganador es el usuario 1: " + usuario1);
+            VentanaGanador ventanaG = new VentanaGanador(this, true, usuario1);
+            ventanaG.setVisible(true);
             reiniciarJuego();
         }
         else if(ganador2 == true) {
-            System.out.println("El ganador es el usuario 2: " + usuario2);
+            VentanaGanador ventanaG = new VentanaGanador(this, true, usuario2);
+            ventanaG.setVisible(true);
             reiniciarJuego();
         }
          //tal vez el tablero esté lleno, y eso sería un empate
@@ -396,7 +398,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
              }
              
              if(casillasEmpate == 9) {
-                 System.out.println("Empate");
+                 VentanaEmpate ventanaE = new VentanaEmpate(this, true);
+                 ventanaE.setVisible(true);
                  reiniciarJuego();
              }
              else {
