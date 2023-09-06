@@ -11,6 +11,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private int matriz[][] = new int[3][3];
     private String turno = "usuario1";
     private String usuario1, usuario2;
+    private int vecesGano1 = 0, vecesGano2 = 0, vecesEmpate = 0;
     
     
     public VentanaPrincipal(String usuario1, String usuario2) {
@@ -156,6 +157,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         menuJuego.setText("Juego");
         menuJuego.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        menuJuego.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuJuegoActionPerformed(evt);
+            }
+        });
 
         comenzarDeNuevo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         comenzarDeNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/refresh_189687.png"))); // NOI18N
@@ -165,6 +171,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         mostrarResultados.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         mostrarResultados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/10338408001667541945-24.png"))); // NOI18N
         mostrarResultados.setText("Mostrar tabla de resultados");
+        mostrarResultados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mostrarResultadosActionPerformed(evt);
+            }
+        });
         menuJuego.add(mostrarResultados);
         menuJuego.add(jSeparator1);
 
@@ -190,11 +201,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
         );
 
         pack();
@@ -366,6 +377,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botonAbajoDerechaActionPerformed
 
+    private void menuJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuJuegoActionPerformed
+        
+    }//GEN-LAST:event_menuJuegoActionPerformed
+
+    private void mostrarResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarResultadosActionPerformed
+        VentanaMostrarResultados ventanaMR = new VentanaMostrarResultados(this, true, usuario1, usuario2, vecesGano1, vecesGano2, vecesEmpate);
+        ventanaMR.setVisible(true);
+    }//GEN-LAST:event_mostrarResultadosActionPerformed
+
     
     private void comprobarGanador() {
         boolean ganador1 = false;
@@ -378,11 +398,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ganador2 = comprobar(2);
         
         if(ganador1 == true) {
+            vecesGano1 ++;
             VentanaGanador ventanaG = new VentanaGanador(this, true, usuario1);
             ventanaG.setVisible(true);
             reiniciarJuego();
         }
         else if(ganador2 == true) {
+            vecesGano2 ++;
             VentanaGanador ventanaG = new VentanaGanador(this, true, usuario2);
             ventanaG.setVisible(true);
             reiniciarJuego();
@@ -398,6 +420,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
              }
              
              if(casillasEmpate == 9) {
+                 vecesEmpate ++;
                  VentanaEmpate ventanaE = new VentanaEmpate(this, true);
                  ventanaE.setVisible(true);
                  reiniciarJuego();

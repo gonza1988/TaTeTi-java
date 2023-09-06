@@ -41,7 +41,7 @@ public class VentanaEmpate extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Georgia", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Empataron. Son perdedores !!");
+        jLabel2.setText("Empataron. Son perdedores !!!");
 
         botonComenzarDeNuevo.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         botonComenzarDeNuevo.setText("Jugar de nuevo");
