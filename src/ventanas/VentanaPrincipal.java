@@ -1,6 +1,12 @@
 
 package ventanas;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
@@ -207,6 +213,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         menuAyuda.setText("Ayuda");
         menuAyuda.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        menuAyuda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuAyudaMouseClicked(evt);
+            }
+        });
         barraMenu.add(menuAyuda);
 
         setJMenuBar(barraMenu);
@@ -406,6 +417,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         vecesEmpate = 0;
         reiniciarJuego();
     }//GEN-LAST:event_comenzarDeNuevoActionPerformed
+
+    private void menuAyudaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAyudaMouseClicked
+        try {
+            Desktop.getDesktop().browse(new URI("https://www.guiainfantil.com/articulos/ocio/juegos/juego-de-tres-en-raya-como-jugar-con-los-ninos-con-papel-y-lapiz/"));
+        } catch (URISyntaxException ex) {
+            //Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+           // Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_menuAyudaMouseClicked
 
     
     private void comprobarGanador() {
