@@ -56,6 +56,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         botonAbajoIzquierda.setIcon(null);
         botonAbajoCentro.setIcon(null);
         botonAbajoDerecha.setIcon(null);
+        
+        //Vamos a preguntar qué jugador comenzará primero
+        quienJuegaPrimero();
+    }
+    
+    private void quienJuegaPrimero() {
+        VentanaEscogerTurno ventanaET = new VentanaEscogerTurno(this, true, usuario1, usuario2);
+        ventanaET.setVisible(true);
+        turno = ventanaET.getTurno();
     }
     
     private void dibujarX(JButton boton) {
@@ -166,6 +175,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         comenzarDeNuevo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         comenzarDeNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/refresh_189687.png"))); // NOI18N
         comenzarDeNuevo.setText("Comenzar de nuevo");
+        comenzarDeNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comenzarDeNuevoActionPerformed(evt);
+            }
+        });
         menuJuego.add(comenzarDeNuevo);
 
         mostrarResultados.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -385,6 +399,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         VentanaMostrarResultados ventanaMR = new VentanaMostrarResultados(this, true, usuario1, usuario2, vecesGano1, vecesGano2, vecesEmpate);
         ventanaMR.setVisible(true);
     }//GEN-LAST:event_mostrarResultadosActionPerformed
+
+    private void comenzarDeNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comenzarDeNuevoActionPerformed
+        vecesGano1 = 0;
+        vecesGano2 = 0;
+        vecesEmpate = 0;
+        reiniciarJuego();
+    }//GEN-LAST:event_comenzarDeNuevoActionPerformed
 
     
     private void comprobarGanador() {
