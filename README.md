@@ -14,7 +14,7 @@ Recreación del juego del tateti, en modo para 2 jugadores. Con un menú despleg
 
 <br><br>
 
-Menú principal:
+Menú principal: <br>
 <img src="src\imagenes\pantallaPrincipal.png">
 <br><br>
 
