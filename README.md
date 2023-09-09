@@ -14,34 +14,42 @@ Recreación del juego del tateti, en modo para 2 jugadores. Con un menú despleg
 
 <br><br>
 
-Menú principal: <br>
+Pantalla principal: Dónde se puede cargar los nombres de los jugadores.
+<br>
 <img src="src\imagenes\pantallaPrincipal.png">
 <br><br>
 
-Carga de datos:
-<img src="images\cargaMascotas.png">
-<br><br>
-
-Visualización de datos:
-<img src="images\visualizacion.png">
-<br><br>
-
-Mensajes de alerta:
+Menú desplegable: Para elegir entre salir del juego, mostrar la tabla de resultados, comenzar de 0 el historial o buscar ayuda.
 <br>
-<img src="images\alerta.png">
+<img src="src\imagenes\menuDesplegable.png">
 <br><br>
 
-Pantalla de edición de datos:
-<img src="images\edicion.png">
+Vista del juego:
+<br>
+<img src="src\imagenes\juego.png">
 <br><br>
 
+Ventana ganador: Al ganar un jugador aparece una ventana con una imagen tipo GIF, con su nombre y sumando una victoria a la tabla de resultados.
+<br>
+<img src="src\imagenes\ventanaGanador.png">
+<br><br>
 
-Borrado de la mascota en la base de datos:
-<img src="images\eliminar1.png">
-<img src="images\eliminar2.png">
+Ventana Empate: Tras no sacarse ventaja en el juego, aparece una imagen tipo GIF, señalando el empate y guardando el dato en la tabla de resultados.
+<br>
+<img src="src\imagenes\ventanaEmpate.png">
+<br><br>
+
+Ventana de elección de turno: Tras terminar una partida, aparecerá una ventana para que se pueda elegir quién comenzará jugando primero.
+<br>
+<img src="src\imagenes\ventanaTurno.png">
+<br><br>
+
+Cuadro de Resultados: Ventana dónde aparecen la cantidad de victorias por jugador y los empates.
+<br>
+<img src="src\imagenes\ventanaResultados.png">
 <br><br>
 
 ---
  ⚠️ Importante! ⚠️
 
-☕ Para la realización de este proyeco utilicé la versión 8 de Java. </br></br>
+☕ Para la realización de este proyeco utilicé la versión 17 de Java. </br></br>
