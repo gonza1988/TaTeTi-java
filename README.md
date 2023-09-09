@@ -5,21 +5,17 @@ Juego clásico del tateti realizado en java Swing
      <img width="300" heigth="300" src="src\imagenes\tic-tac-toe-ox-tres-en-raya.png">
 </p>
 
-<h3>Peluquería Canina (CRUD-Relación 1 a 1)</h3>
-Permite administrar el sistema de peluquería de mascotas,con sus dueños en relación de 1 a 1: registro, lectura, edición y eliminación de datos.
+<h3>Ta Te Ti</h3>
+Recreación del juego del tateti, en modo para 2 jugadores. Con un menú desplegable para mostrar la tabla de resultados de ganadores, volver a comenzar el historial, salir del juego o buscar ayuda en internet para entender el juego.
 
 ## 🖥️ Tecnologías Utilizadas:
 
-- Java
-- Eclipse
-- Jpa
-- MySql
-- Plugin WindowBuilder </br>
+- Java Swing  </br>
 
 <br><br>
 
 Menú principal:
-<img src="images\pantallaPrincipal.png">
+<img src="src\imagenes\pantallaPrincipal.png">
 <br><br>
 
 Carga de datos:
